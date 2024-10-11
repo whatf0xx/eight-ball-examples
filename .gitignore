@@ -1,0 +1,5 @@
+.env/
+
+data/
+figs/
+__pycache__/
