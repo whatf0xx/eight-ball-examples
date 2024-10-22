@@ -14,10 +14,11 @@ if __name__ == "__main__":
     sim.add_balls(balls)
     sim.initialise()
     # sim.comic_strip(4)
-    print("Running to thermodynamic equilibrium...")
-    for _ in tqdm(range(100_000)):
-        sim.next_collision()
-    times_dist = sim.nth_collision_times(100, 5_00_000, 0., 1., 500)
+    # print("Running to thermodynamic equilibrium...")
+    # for _ in tqdm(range(100_000)):
+    #     sim.next_collision()
+    sim.run_n_collisions(100_000)
+    times_dist = sim.nth_collision_times(50, 5_000_000, 0., 0.4, 100)
     with open("data/hundred_collision_times.pkl", "wb+") as f:
         dump(times_dist, f)
     fig = plt.figure()
