@@ -17,7 +17,7 @@ if __name__ == "__main__":
     # print("Running to thermodynamic equilibrium...")
     # for _ in tqdm(range(100_000)):
     #     sim.next_collision()
-    sim.run_n_collisions(100_000)
+    sim.thermalize(100_000)
     times_dist = sim.nth_collision_times(50, 5_000_000, 0., 0.4, 100)
     with open("data/hundred_collision_times.pkl", "wb+") as f:
         dump(times_dist, f)
